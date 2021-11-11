@@ -11,7 +11,7 @@ module Types
       description "Returns a user and repos"
       argument :login, String, required: true
     end
-    
+
     def user(login:)
       # create URI's
       user_uri = URI.join(API_URL, "users/", login)

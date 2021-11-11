@@ -1,8 +1,9 @@
-import { gql } from './graphql'
+import { gql } from './graphql';
 
-export const getUser = gql(`query GetUser($login: String!) {
+export const getUser = gql(`
+query GetUser($login: String!) {
     user(login: $login) {
         name
         repos
     }
-}`)
+}`);

@@ -1,6 +1,13 @@
 <h1>Users login</h1>
-<%= form_with url: "/", method: :post do |form| %>
-  <%= form.label :query, "Search for:" %>
+
+<%= form_with do |form| %>
+  <%= form.label :query, "Type login:" %>
   <%= form.text_field :query %>
-  <%= form.submit "Search" %>
+  <%= form.submit "Search", data: { disable_with: false } %>
 <% end %>
+
+<h2 id="name"></h2>
+<ul id="list"></ul>
+<p id="error" hidden></p>
+
+<%= javascript_pack_tag 'form' %>
