@@ -20,14 +20,18 @@ module Types
       # get user data
       user_response = Net::HTTP.get(user_uri)
       user = JSON.parse(user_response)
+      user_name = user['name'] || 'Unknown name'
+      puts user_name.class
 
       # get repos data
       repos_response = Net::HTTP.get(repos_uri)
       repos = JSON.parse(repos_response)
       repos_list = repos.map {|repo| repo['name']}
 
+      # check 'name' => nul
+
       return {
-        :name => user['name'],
+        :name => user_name,
         :repos => repos_list
       }
     end

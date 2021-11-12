@@ -1,8 +1,8 @@
 <h1>Users login</h1>
 
-<%= form_with do |form| %>
-  <%= form.label :query, "Type login:" %>
-  <%= form.text_field :query %>
+<%= form_with html: { autocomplete: "off" } do |form| %>
+  <%= form.label :query, "Enter your login:" %>
+  <%= form.text_field :query, placeholder: "login" %>
   <%= form.submit "Search", data: { disable_with: false } %>
 <% end %>
 
